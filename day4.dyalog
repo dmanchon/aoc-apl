@@ -5,7 +5,7 @@
 
          wins←nums∘{⊃⍸({∨/,5=(+/⍵),(+/[2]⍵)}¨⍵∘∊¨,\⍺)}¨boards
          i⍙winner←wins⍳(⌊/wins)
-         winner←winner←↑boards[i⍙winner]
+         winner←↑boards[i⍙winner]
          score⍙winner←(wins[i⍙winner]⊃nums)×(+/+/winner×~(winner∊wins[i⍙winner]↑nums))
          i⍙loser←wins⍳(⌈/wins)
          loser←↑boards[i⍙loser]
