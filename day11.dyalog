@@ -12,7 +12,7 @@
          (lights∨⍺)∇ ⍵+(expand lights)
      }
 
-     f←{
+     p1←{
          flashes iteration←⍺
          iteration=0:flashes
          iteration←iteration-1
@@ -21,6 +21,15 @@
          flashes←flashes+(+/+/(updated=0))
          (flashes iteration)∇ updated
      }
+     part1←(0 100)p1 input
 
-     (0 100)f input
+     p2←{
+         ⍺←0
+         (+/+/(⍵≠0))=0:⍺
+         (⍺+1)∇ step(⍵+1)
+     }
+
+     part2←p2 input
+
+     part1 part2
  }
